@@ -1,0 +1,26 @@
+{
+    "os": "Linux-4.4.0-59-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2022-04-02T13:54:48.099199",
+    "startedAt": "2022-04-02T13:54:45.040111",
+    "docker": null,
+    "gpu": "Tesla V100-PCIE-32GB",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/opt/ml/.local/share/jupyter/runtime/kernel-4dd64b2d-a081-41b3-be23-5618373c8f4d.json"
+    ],
+    "state": "running",
+    "program": "detection/baseline/mmdetection/faster_rcnn_train.ipynb",
+    "root": "/opt/ml/detection/baseline/mmdetection",
+    "git": {
+        "remote": "https://github.com/open-mmlab/mmdetection.git",
+        "commit": "6ddbff8406aec8b414462badbd57c4013b594afe"
+    },
+    "email": null,
+    "host": "5d948c0036f4",
+    "username": "root",
+    "executable": "/opt/conda/envs/detection/bin/python"
+}
