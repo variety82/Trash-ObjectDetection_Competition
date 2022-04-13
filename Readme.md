@@ -13,8 +13,8 @@
 - **Input :** 쓰레기 객체가 담긴 이미지와 bbox 정보(좌표, 카테고리)
 - **Output :** 모델은 bbox 좌표, 카테고리, score 값을 리턴
 
-| 이름   | 역할                                                         | github                         |
-| ------ | ------------------------------------------------------------ | ------------------------------ |
+|  이름  | 역할                                                         | github                         |
+| :----: | ------------------------------------------------------------ | ------------------------------ |
 | 강소망 | yolox, yolov5x6 실험                                         | https://github.com/Somang-Kang |
 | 김기태 | htc_Swin_L(22K), yolov5l6 + TTA 실험, EDA 수행               | https://github.com/kkt4828/    |
 | 김창현 | Swin_L_Cascade R-CNN 실험, Oversampling 실험                 | https://github.com/variety82   |
@@ -78,7 +78,7 @@ TTA
 ### Yolov5
 
 ```markdown
- 💡 **Albumentation**
+ 💡 Albumentation
 
 - RandomRotate90 , RandomFlip ( Horizion, Vertical )
   - Rotate 를 시켜도 Object 의 형태는 동일하므로 데이터 증강의 목적으로 사용
@@ -87,15 +87,70 @@ TTA
 - Blur, GaussianNoise, MotionBlur [One of]
   - 초점이 흐린 Image가 들어올 것을 대비
 
-**Yolov5 내부 Augmentation**
+Yolov5 내부 Augmentation
 
-- **Translate, scale, mosaic, mixup**
+- Translate, scale, mosaic, mixup
 
-**TTA**
+TTA
 
-- **HorizionFlip, VerticalFlip, Multi scale 적용** 
+- HorizionFlip, VerticalFlip, Multi scale 적용
 ```
 
 
 
 ## 모델별 결과 테이블 (Hyperparameter, TTA 적용 등 내용 추가)
+
+
+
+|      | BackBone    | Model         | Val mAP50 | LB Score |
+| ---- | ----------- | ------------- | --------- | -------- |
+| 1    | Resnet101   | Cascade R-CNN | 0.5290    |          |
+| 2    |             | Grid R-CNN    | 0.5054    |          |
+| 3    |             | ATSS + DyHead | 0.4934    |          |
+| 4    |             | UniverseNet   | 0.6070    | 0.6134   |
+| 5    |             | Centernet2    | 0.5860    | 0.5927   |
+| 6    | Swin_T      | Cascade R-CNN | 0.5810    | 0.5949   |
+| 7    |             | HTC           | 0.5899    | 0.6003   |
+| 8    | Swin_L (1K) | Cascade R-CNN | 0.6520    | 0.6849   |
+| 9    |             | HTC           | 0.6660    | 0.6819   |
+| 10   |             | Centernet2    | 0.6160    | 0.6184   |
+| 11   |             | ATSS + DyHead | 0.6450    | 0.6660   |
+| 12   | Swin_L(22K) | HTC           | 0.6510    | 0.6722   |
+| 13   | YOLO        | YOLOx         | 0.4280    |          |
+| 14   |             | YOLOv5x6      | 0.5600    |          |
+| 15   |             | YOLOv5l6      | 0.5900    |          |
+
+# Ensemble
+
+- WBF ( Weighted Box Fusion)
+- Threshold 0.65
+
+![image-20220413171235163](https://raw.githubusercontent.com/variety82/imgForTypora/forUpload/img/image-20220413171235163.png)
+
+
+
+# 최종결과 (마무리)
+
+- **최종 LB Score**
+
+  **Public : 0.7207** (5등 / 19 team)    **Private : 0.7059 ** (5등 / 19 team)
+
+
+
+## Reference
+
+swin transformer - [microsoft](https://github.com/microsoft)/**[Swin-Transformer](https://github.com/microsoft/Swin-Transformer)**
+
+yolov5 github - https://github.com/ultralytics/yolov5
+
+mmdetection docs - https://mmdetection.readthedocs.io/en/latest/
+
+mmdetection github - https://github.com/open-mmlab/mmdetection
+
+universenet - https://github.com/shinya7y/UniverseNet
+
+centernet2 - https://github.com/xingyizhou/CenterNet2
+
+data - Upstage 제공
+
+albumentation - https://github.com/albumentations-team/albumentations
