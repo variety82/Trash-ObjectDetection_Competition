@@ -69,18 +69,15 @@ baseline
   - 여러가지 밝기에 따른 일반화 성능 향상 도모
 - Blur, GaussianNoise, MotionBlur [One of]
   - 초점이 흐린 Image가 들어올 것을 대비
+  
+TTA
+
+- HorizionFlip, VerticalFlip 적용 
 ```
-
-
-
-> **TTA**
->
-> - **HorizionFlip, VerticalFlip 적용** 
-
-
 
 ### Yolov5
 
+```markdown
  💡 **Albumentation**
 
 - RandomRotate90 , RandomFlip ( Horizion, Vertical )
@@ -97,5 +94,8 @@ baseline
 **TTA**
 
 - **HorizionFlip, VerticalFlip, Multi scale 적용** 
+```
 
-# 모델별 결과 테이블 (Hyperparameter, TTA 적용 등 내용 추가)
+
+
+## 모델별 결과 테이블 (Hyperparameter, TTA 적용 등 내용 추가)
