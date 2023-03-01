@@ -1,3 +1,6 @@
+## 진행기간
+2022.03.21 ~ 2022.04.07 19:00
+
 ## 프로젝트 개요
 
 산업혁명 이후로 대량 생산 시대가 찾아오면서 쓰레기 처리문제, 매립지 문제 등은 끊임없이 인류를 괴롭히는 문제 중 하나가 되었습니다. 최근에는 코로나 이슈로 쓰레기 문제는 점점 더 심각해지고 있는 상황입니다.
@@ -21,7 +24,7 @@
 | 박기련  | Swin-T, L 기반 Cascade R-CNN, HTC 실험                       | https://github.com/parkgr95    |
 | 박민수  | Centernet2, DyHead, Universenet 실험Augmentation 실험, Ensenble(WBF) 코드 | https://github.com/mata1139    |
 
-# Contents
+# File Directory
 
 ```
 baseline
